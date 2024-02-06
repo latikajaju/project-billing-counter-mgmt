@@ -1,12 +1,14 @@
 .drawer-container {
-
     width: 100vw;
     height: 100vh;
-    background-color: cadetblue;
+    a{
+        color: #000;
+        font-size: 1.2vw;
+        text-decoration: none;
+    }
 }
 
 .drawer {
     width: 20%;
     height: 100%;
-    background-color: red;
 }

@@ -39,6 +39,6 @@ export class BcmLoginComponent {
 
     onLogin() {
       console.log(this.loginForm.value)
-      this.router.navigate(['/dash'])
+      this.router.navigate(['/dashboard/'])
     }
 }

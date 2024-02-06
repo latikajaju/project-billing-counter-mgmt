@@ -1,1 +1,20 @@
-<input type="button" value="Open" (click)="onDrawerMenuClicked()">
+<nav class="p-3">
+  <div class="row align-items-center">
+    <div class="align-items-end col-md-7 justify-content-center">
+        <button mat-button color="primary">LOGO</button>
+  
+        <button mat-raised-button color="primary" (click)="onDrawerMenuClicked()">
+          {{ isDrawerOpen ? "" : "" }}
+          <mat-icon *ngIf="isDrawerOpen" class="open-icon">close</mat-icon>
+          <mat-icon *ngIf="!isDrawerOpen" class="closed-icon">menu</mat-icon>
+        </button>
+        <!-- <input type="button" [value]="isDrawerOpen  ? 'Close' : 'Menu'"
+ (click)="onDrawerMenuClicked()"> -->
+     </div>
+
+    <div class="align-items-center justify-content-center row">
+        <h2 class="mb-0 mr-3">Welcome Admin</h2>
+    <button mat-raised-button color="primary">Logout</button>
+    </div>
+  </div>
+</nav>

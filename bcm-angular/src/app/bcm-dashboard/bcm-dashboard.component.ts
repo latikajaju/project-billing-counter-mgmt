@@ -2,16 +2,19 @@ import { AfterViewInit, Component, DoCheck, ElementRef, OnInit, ViewChild, effec
 import {MatDrawer, MatSidenav, MatSidenavModule} from '@angular/material/sidenav';
 import { BcmNavComponent } from '../bcm-nav/bcm-nav.component';
 import { NavCommunicationService } from '../nav-communication.service';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatIconModule} from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bcm-dashboard',
   standalone: true,
-  imports: [MatSidenavModule, BcmNavComponent],
+  imports: [MatSidenavModule, BcmNavComponent, MatExpansionModule, MatIconModule, RouterModule],
   templateUrl: './bcm-dashboard.component.html',
   styleUrl: './bcm-dashboard.component.scss'
 })
 export class BcmDashboardComponent  {
-
+  panelOpenState = false;
   @ViewChild('drawer')
   drawer!: MatDrawer
 

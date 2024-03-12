@@ -3,11 +3,11 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { billDetails } from '../../data-type';
+import { Bill } from '../../../../data-type';
 import { MatTableModule } from '@angular/material/table';
 
 
-const BILL_DETAILS: billDetails[] = [
+const BILL_DETAILS: Bill[] = [
   {id: 1, item: 'airpods', price: 8800, quantity:3, total: 1787},
   {id: 2, item: 'phone', price: 3000, quantity:2, total: 9898},
 ];

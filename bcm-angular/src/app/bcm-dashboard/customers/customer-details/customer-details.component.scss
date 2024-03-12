@@ -1,0 +1,19 @@
+.cust-card-details{
+    p{
+        font-size: 1.5vw;
+    }
+}
+
+.flex-row{
+    flex-direction: row;
+    display: flex;
+    gap: 15px;
+    width: 50%;
+
+    .label{
+        width: 20%;
+    }
+    .content{
+        width: 30%;
+    }
+}

@@ -1,0 +1,21 @@
+
+.align-page-center{
+    justify-content: center;
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+    display: flex;
+    gap: 15px;
+    justify-content: end;
+}
+
+
+.custom-form{
+    flex-direction: column;
+    display: flex;
+    margin-top: 2%;
+    margin-top: 0%;
+    width: 50%;
+}

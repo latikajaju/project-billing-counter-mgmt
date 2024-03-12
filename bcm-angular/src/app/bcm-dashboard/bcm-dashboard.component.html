@@ -2,7 +2,6 @@
 <app-bcm-nav></app-bcm-nav>
 
 <mat-drawer-container class="drawer-container" autosize>
-
     <mat-drawer #drawer mode="side" class="drawer">
         <mat-accordion>
             <mat-expansion-panel>
@@ -11,19 +10,31 @@
                   Bill
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <p><a routerLink="./new-bill"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon> New Bill</a></p>
-              <p><a routerLink="./bill-details" routerLinkActive="active"><mat-icon aria-hidden="false" aria-label=" list_alt" fontIcon=" list_alt"></mat-icon> Bill details</a></p>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon><a routerLink="./bill/new-bill"> New Bill</a></p>
+              </div>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label=" list_alt" fontIcon=" list_alt"></mat-icon> <a routerLink="./bill/bill-details" routerLinkActive="active">Bill details</a></p>
+              </div>
+              
             </mat-expansion-panel>
 
             <mat-expansion-panel (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
                 <mat-panel-title>
-                    Customers
+                  Customers
                 </mat-panel-title>
               </mat-expansion-panel-header>
-              <p><a routerLink="./new-customer"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon> New Customers</a></p>
-              <p><a routerLink="./customer-details" routerLinkActive="active"><mat-icon aria-hidden="false" aria-label="contact_mail" fontIcon="contact_mail"></mat-icon> Customer details</a></p>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label=" list_alt" fontIcon=" list_alt"></mat-icon> <a routerLink="./customers/customers-list" routerLinkActive="active">Customers List</a></p>
+              </div>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon> <a routerLink="./customers/new-customer">New Customers</a></p>
+              </div>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="contact_mail" fontIcon="contact_mail"></mat-icon> <a routerLink="./customers/customer-details" routerLinkActive="active">Customer details</a></p>
+              </div>
             </mat-expansion-panel>
             
             <mat-expansion-panel>
@@ -32,8 +43,13 @@
                     Analytics
                   </mat-panel-title>
                 </mat-expansion-panel-header>
-                <p><a routerLink="./monthly-sell"><mat-icon aria-hidden="false" aria-label="bar_chart" fontIcon="bar_chart"></mat-icon> Monthly Sell</a></p>
-              <p><a routerLink="./products-sell" routerLinkActive="active"><mat-icon aria-hidden="false" aria-label=" insert_chart_outlined" fontIcon="bar_chart"></mat-icon>Products Sell</a></p>
+                <div>
+                  <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="bar_chart" fontIcon="bar_chart"></mat-icon> <a routerLink="./analytics/monthly-sell">Monthly Sell</a></p>
+                </div>
+                <div>
+                  <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label=" insert_chart_outlined" fontIcon="bar_chart"></mat-icon><a routerLink="./analytics/products-sell" routerLinkActive="active">Products Sell</a></p>
+                </div>
+              
               </mat-expansion-panel>
           </mat-accordion>   
     </mat-drawer>

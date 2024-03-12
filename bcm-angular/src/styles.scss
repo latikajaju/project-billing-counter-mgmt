@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
 
 html, body { height: 100%; 
     overflow: hidden;
@@ -18,4 +17,22 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+.w-100{
+    width: 100%;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.p-1{
+    padding: 1%;
+}
+
+.mat-card-align{
+    margin:1em
 }

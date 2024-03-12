@@ -1,17 +1,22 @@
 
-export interface customerDetails {
+export interface Customer {
     id:number;
-    bill: string;
-    date: string;
-    amount:  number;
-    method: string;
+    dob: string;
+    name: string
+    email: string;
+    mobile: string;
   }
 
   
-export interface billDetails {
+export interface Bill {
     id:number;
     item: string;
     price: number;
     quantity: number;
     total:  number;
+  }
+
+export interface DialogData{
+    data: Customer;
+    src: string
   }

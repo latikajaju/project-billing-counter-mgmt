@@ -1,5 +1,16 @@
 
 .big-header {
     font-size: 3em;
+}
 
+
+.custom-form{
+    flex-direction: column;
+    display: flex;
+    margin-top: 2%;
+    align-items: center;
+}
+
+.align-items-center{
+    gap:5px
 }

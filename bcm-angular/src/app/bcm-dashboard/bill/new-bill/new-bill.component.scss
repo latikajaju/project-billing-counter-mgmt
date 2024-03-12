@@ -1,0 +1,30 @@
+.bill-info{
+    align-items: end;
+    display: flex;
+    flex-direction: column;
+}
+.align-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.align-details-form-search{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.btn-search{
+    margin-bottom: 22px;
+}
+
+.pb-0{
+    padding-bottom: 0px!important;
+}
+.pt-0{
+    padding-top: 0px!important;
+}
+.mdc-card{
+    margin: 10px;
+}

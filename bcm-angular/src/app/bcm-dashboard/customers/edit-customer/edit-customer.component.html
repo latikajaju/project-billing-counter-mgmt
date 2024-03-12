@@ -1,0 +1,73 @@
+<main class="container">
+    <mat-card class=" align-items-center mb-5 mt-4 mat-card-align">
+      <mat-card-content class="cust-card-details">
+        <h1>Edit Customer</h1>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="align-items-center mb-5 mt-4 mat-card-align">
+      <mat-card-content class="cust-card-details w-100 align-page-center">
+        <form class="custom-form" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class=" ">
+            <mat-label>Name</mat-label>
+            <input
+              matInput
+              placeholder="name"
+              type="text"
+              formControlName="name"
+              required
+            />   
+            <mat-error *ngIf="customerForm?.get('name')?.hasError('required')">Name is <strong>required</strong></mat-error>  
+          </mat-form-field>
+        
+          <mat-form-field class=" ">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="email"
+              type="email"
+              formControlName="email"
+              placeholder="pat@example.com"
+            />
+            <mat-error *ngIf="customerForm?.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error>  
+            <mat-error *ngIf="customerForm?.get('email')?.hasError('email')">Please enter a valid email address</mat-error>  
+          </mat-form-field>
+          
+          <mat-form-field class=" ">
+            <mat-label>Mobile</mat-label>
+            <input
+              matInput
+              placeholder="mobile"
+              type="tel"
+              formControlName="mobile"
+              required
+            />
+            
+            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('required') ">Phone is <strong>required</strong></mat-error>
+            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('pattern')">Phone number is <strong>incorrect</strong></mat-error>
+          </mat-form-field>
+          
+          <mat-form-field class=" ">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput [matDatepicker]="picker" [max]="today" formControlName="dob"/>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="customerForm?.get('dob')?.hasError('required')">Date is <strong>required</strong></mat-error>
+            <mat-error *ngIf="customerForm?.get('dob')?.hasError('isFuture')">Date is <strong>incorrect</strong></mat-error>
+          </mat-form-field>
+  
+          <div class="flex-row">
+            <div class="mr-3">
+              <button mat-raised-button color="primary" type="submit">Add Customer</button>
+            </div>
+            <div class="">
+              <button mat-raised-button color="warn" type="submit">Reset</button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </main>
+  

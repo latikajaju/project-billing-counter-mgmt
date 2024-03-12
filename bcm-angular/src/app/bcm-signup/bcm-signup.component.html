@@ -1,0 +1,85 @@
+<main class="container">
+    <mat-card class=" align-items-center mb-5 mt-4 mat-card-align">
+      <mat-card-content class="cust-card-details">
+        <h1>Sign Up</h1>
+      </mat-card-content>
+    </mat-card>
+    <mat-card class="align-items-center mb-5 mt-4 mat-card-align">
+      <mat-card-content class="cust-card-details w-100 align-page-center">
+        <form class="custom-form" [formGroup]="signupForm" (ngSubmit)="onSignUp()">
+          <mat-form-field class=" ">
+            <mat-label>User Name</mat-label>
+            <input
+              matInput
+              placeholder="name"
+              type="text"
+              formControlName="name"
+              required
+            />   
+            <mat-error *ngIf="signupForm?.get('name')?.hasError('required')">Name is <strong>required</strong></mat-error>  
+          </mat-form-field>
+        
+          <mat-form-field class=" ">
+            <mat-label>Email</mat-label>
+            <input
+              matInput
+              placeholder="email"
+              type="email"
+              formControlName="email"
+              placeholder="pat@example.com"
+            />
+            <mat-error *ngIf="signupForm?.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error>  
+            <mat-error *ngIf="signupForm?.get('email')?.hasError('email')">Please enter a valid email address</mat-error>  
+          </mat-form-field>
+          
+          <mat-form-field class=" ">
+            <mat-label>Mobile</mat-label>
+            <input
+              matInput
+              placeholder="mobile"
+              type="tel"
+              formControlName="mobile"
+              required
+            />
+            
+            <mat-error *ngIf="signupForm?.get('mobile')?.hasError('required') ">Phone is <strong>required</strong></mat-error>
+            <mat-error *ngIf="signupForm?.get('mobile')?.hasError('pattern')">Phone number is <strong>incorrect</strong></mat-error>
+          </mat-form-field>
+          
+          <mat-form-field class=" ">
+            <mat-label>Password</mat-label>
+            <input
+              matInput
+              placeholder="password"
+              type="password"
+              formControlName="password"
+              required
+            />
+            <!-- <mat-error *ngIf="signupForm?.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error> -->
+          </mat-form-field>
+
+          <mat-form-field class=" ">
+            <mat-label>Confirm Password</mat-label>
+            <input
+              matInput
+              placeholder="confirm password"
+              type="password"
+              formControlName="confirm password"
+              required
+            />
+            <!-- <mat-error *ngIf="signupForm?.get('confirmPassword')?.hasError.('mismatch')">Password <strong>do not match</strong></mat-error> -->
+          </mat-form-field>
+  
+          <div class="flex-row">
+            <div class="mr-3">
+              <button mat-raised-button color="primary" type="submit">Add Customer</button>
+            </div>
+            <div class="">
+              <button mat-raised-button color="warn" type="submit">Reset</button>
+            </div>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </main>
+  

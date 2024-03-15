@@ -87,17 +87,22 @@ export class EditCustomerComponent {
   get today(): Date {
     return new Date();
   }
-
-  onSubmit() {
+  onSubmit(){
     if (this.customerForm.valid) {
       const customerData = {
         ...this.customerForm.value,
-        dob: formateDate(this.customerForm.value['dob']),
+        id: this.custId,
+        dob: this.customerForm.value['dob'],
         src: 'edit'
       };
-      this.dialog.open(ConfirmationDialogComponent, { data: customerData });
-    } else {
+      this.dialog.open(ConfirmationDialogComponent, { data: {customerData, src:'edit'} })
+    }
+    else {
       this.customerForm.markAllAsTouched();
     }
+  }
+
+  resetForm(){
+    this.customerForm.reset()
   }
 }

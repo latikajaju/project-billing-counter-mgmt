@@ -32,21 +32,24 @@ export class ConfirmationDialogComponent {
   constructor(
     private router: Router,
     private dialogRef: MatDialogRef<ConfirmationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public dialogData: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data:DialogData,
     private customerS: CustomerServiceService
   ) {}
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.data);
+  }
   onSubmit() {
     console.log("Clicked on submit")
-    console.log(this.dialogData);
-    if (this.dialogData.src == 'create') {
+    console.log(this.data);
+    if (this.data.src == 'create') {
       console.log('in create');
-      this.customerS.addCustomer(this.dialogData.data);
+      this.customerS.addCustomer(this.data.customerData);
       this.router.navigate(['/dashboard/customers/customers-list']);
     }
-    if (this.dialogData.src == ' edit') {
+    if (this.data.src == 'edit') {
       console.log('in edit');
-      this.customerS.editCustomer();
+      this.customerS.editCustomer(this.data.customerData);
+      this.router.navigate(['/dashboard/customers/customers-list'])
     }
   }
   onClose() {

@@ -5,22 +5,22 @@
     </mat-card-content>
   </mat-card>
   <mat-card class=" mat-card-align">
-    <mat-card-content class="cust-card-details">
+    <mat-card-content class="cust-card-details" *ngIf="customers">
       <div class="flex-row">
         <div class="label"><p>Name:</p></div>
-        <div class="content"><p>Latika Jaju</p></div>
+        <div class="content"><p>{{customers.name}}</p></div>
       </div>
       <div class="flex-row">
         <div class="label"><p>Email:</p></div>
-        <div class=" content"><p>jaju.latika304&#64;gmail.com</p></div>
+        <div class=" content"><p>{{customers.email}}</p></div>
       </div>
       <div class="flex-row">
         <div class="label "><p>Mobile:</p></div>
-        <div class="content "><p>9898989898</p></div>
+        <div class="content "><p>{{customers.mobile}}</p></div>
       </div>
       <div class="flex-row">
         <div class="label "><p>DOB:</p></div>
-        <div class=" content"><p>2023-02-02</p></div>
+        <div class=" content"><p>{{customers.dob}}</p></div>
       </div>
     </mat-card-content>
   </mat-card>

@@ -17,6 +17,7 @@ export interface Bill {
   }
 
 export interface DialogData{
-    data: Customer;
+    updatedCustData(updatedCustData: any): unknown;
+    customerData: Customer;
     src: string
   }

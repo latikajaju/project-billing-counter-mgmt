@@ -1,38 +1,45 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; 
-    overflow: hidden;
+html,
+body {
+  height: 100%;
+  overflow: hidden;
 }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-h1{
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 0px;
-    word-spacing: 6px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.align-items-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  a{
+    cursor: pointer;
+  }
 }
 
-
-.w-100{
-    width: 100%;
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0px;
+  word-spacing: 6px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
+.align-items-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.p-1{
-    padding: 1%;
+.w-100 {
+  width: 100%;
 }
 
-.mat-card-align{
-    margin:1em
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.p-1 {
+  padding: 1%;
+}
+
+.mat-card-align {
+  margin: 1em;
 }

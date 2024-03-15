@@ -1,0 +1,99 @@
+<main class="container">
+    <mat-card class="align-items-center mb-5 mt-4">
+      <mat-card-content class="cust-card-details">
+        <h1>List of Bills</h1>
+      </mat-card-content>
+    </mat-card>
+  
+    <mat-card>
+      <mat-card-content class="pb-0">
+        <div class="align-details">
+          <form>
+            <div class="align-details-form-search ">
+              <mat-form-field>
+                <mat-label>Mobile</mat-label>
+                <input
+                  matInput
+                  placeholder="mobile"
+                  type="text"
+                  formControlName="mobile"
+                  required
+                />
+                <!-- <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                          Username is required.
+                                      </mat-error> -->
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Bill Number</mat-label>
+                <input
+                  matInput
+                  placeholder="bill number"
+                  type="text"
+                  formControlName="bill-number"
+                  required
+                />
+                <!-- <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                          Username is required.
+                                      </mat-error> -->
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Date</mat-label>
+                <input
+                  matInput
+                  placeholder="date"
+                  type="text"
+                  formControlName="date"
+                  required
+                />
+                <!-- <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                          Username is required.
+                                      </mat-error> -->
+              </mat-form-field>
+              
+              <mat-form-field>
+                <mat-label>Counter</mat-label>
+                <input
+                  matInput
+                  placeholder="counter"
+                  type="text"
+                  formControlName="counter"
+                  required
+                />
+                <!-- <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                          Username is required.
+                                      </mat-error> -->
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Cashier</mat-label>
+                <input
+                  matInput
+                  placeholder="cashier"
+                  type="text"
+                  formControlName="cashier"
+                  required
+                />
+                <!-- <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                                          Username is required.
+                                      </mat-error> -->
+              </mat-form-field>
+              <button
+                mat-raised-button
+                color="primary"
+                type="submit"
+                class="btn-search"
+              >
+                Search
+              </button>
+            </div>
+          </form>
+          
+          <div class="bill-info">
+              <p>Date: 2023-02-02</p>
+              <p>Cashier</p>
+              <p>Counter 1</p>
+            </div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </main>
+  

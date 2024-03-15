@@ -4,21 +4,6 @@
 <mat-drawer-container class="drawer-container" autosize>
     <mat-drawer #drawer mode="side" class="drawer">
         <mat-accordion>
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Bill
-                </mat-panel-title>
-              </mat-expansion-panel-header>
-              <div>
-                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon><a routerLink="./bill/new-bill"> New Bill</a></p>
-              </div>
-              <div>
-                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label=" list_alt" fontIcon=" list_alt"></mat-icon> <a routerLink="./bill/bill-details" routerLinkActive="active">Bill details</a></p>
-              </div>
-              
-            </mat-expansion-panel>
-
             <mat-expansion-panel (opened)="panelOpenState = true"
                                  (closed)="panelOpenState = false">
               <mat-expansion-panel-header>
@@ -37,6 +22,23 @@
               </div>
             </mat-expansion-panel>
             
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Bill
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon=" list_alt"></mat-icon><a routerLink="./bill/bills-list"> Bills List</a></p>
+              </div>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon><a routerLink="./bill/new-bill"> New Bill</a></p>
+              </div>
+              <div>
+                <p class="p-side-nav"><mat-icon aria-hidden="false" aria-label="contact_mail" fontIcon="contact_mail"></mat-icon> <a routerLink="./bill/bill-details" routerLinkActive="active">Bill details</a></p>
+              </div>
+              
+            </mat-expansion-panel>
             <mat-expansion-panel>
                 <mat-expansion-panel-header>
                   <mat-panel-title>

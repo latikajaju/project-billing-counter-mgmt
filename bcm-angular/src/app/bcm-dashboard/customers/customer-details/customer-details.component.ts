@@ -5,11 +5,12 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { Customer } from '../../../../data-type';
 import { CustomerServiceService } from '../customer-service.service';
 import { ActivatedRoute } from '@angular/router';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-customer-details',
   standalone: true,
-  imports: [MatTableModule, MatCardModule, MatGridListModule],
+  imports: [MatTableModule, MatCardModule, MatGridListModule, NgIf],
   templateUrl: './customer-details.component.html',
   styleUrl: './customer-details.component.scss',
 })
@@ -33,7 +34,7 @@ export class CustomerDetailsComponent {
     //   this.customerDet = customer;
     //   console.log(this.customerDet);
     // });
-    this.customerService.customerDetails(this.custId)
+    this.customers = this.customerService.customerDetails(this.custId)
     console.log(this.customers)
   }
 }

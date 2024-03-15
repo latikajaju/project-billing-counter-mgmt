@@ -6,7 +6,7 @@
         </div>
         <div class="sub-nav">
             <a mat-raised-button color="primary" routerLink="/dashboard/customers/new-customer">Add New Customer</a>
-            <input type="text" placeholder="search"/>
+            <input type="text" placeholder="Search by Mobile Number" [(ngModel)]="searchControl.value" (keyup)="onSearch()" />
         </div>
       </mat-card-content>
     </mat-card>
@@ -43,7 +43,7 @@
 
         <ng-container matColumnDef="action">
           <th mat-header-cell *matHeaderCellDef>Action</th>
-          <td mat-cell *matCellDef="let element"><a [routerLink]="['/dashboard/customers/edit-customer', element.id]">Edit</a></td>
+          <td mat-cell *matCellDef="let element"><a [routerLink]="['/dashboard/customers/edit-customer', element.id]"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon></a></td>
         </ng-container>
   
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

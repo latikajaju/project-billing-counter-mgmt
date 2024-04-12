@@ -6,7 +6,22 @@
     </mat-card>
     <mat-card class="align-items-center mb-5 mt-4 mat-card-align">
       <mat-card-content class="cust-card-details w-100 align-page-center">
-        <form class="custom-form" [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <form class="custom-form" [formGroup]="customerForm" (ngSubmit)="onSubmit()">          
+          <mat-form-field class=" ">
+            <mat-label>Mobile</mat-label>
+            <input
+              matInput
+              placeholder="mobile"
+              type="tel"
+              formControlName="mobile"
+              required
+              readonly
+            />
+            
+            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('required') ">Phone is <strong>required</strong></mat-error>
+            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('pattern')">Phone number is <strong>incorrect</strong></mat-error>
+          </mat-form-field>
+          
           <mat-form-field class=" ">
             <mat-label>Name</mat-label>
             <input
@@ -30,20 +45,6 @@
             />
             <mat-error *ngIf="customerForm?.get('email')?.hasError('required')">Email is <strong>required</strong></mat-error>  
             <mat-error *ngIf="customerForm?.get('email')?.hasError('email')">Please enter a valid email address</mat-error>  
-          </mat-form-field>
-          
-          <mat-form-field class=" ">
-            <mat-label>Mobile</mat-label>
-            <input
-              matInput
-              placeholder="mobile"
-              type="tel"
-              formControlName="mobile"
-              required
-            />
-            
-            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('required') ">Phone is <strong>required</strong></mat-error>
-            <mat-error *ngIf="customerForm?.get('mobile')?.hasError('pattern')">Phone number is <strong>incorrect</strong></mat-error>
           </mat-form-field>
           
           <mat-form-field class=" ">

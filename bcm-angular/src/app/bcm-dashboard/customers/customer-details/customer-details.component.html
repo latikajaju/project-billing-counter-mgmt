@@ -24,35 +24,44 @@
       </div>
     </mat-card-content>
   </mat-card>
-  <div class=" mat-card-align">
-    <table mat-table class="mat-elevation-z8 mt-5">
+  <!-- <mat-card class=" mat-card-align">
+    <mat-card-content *ngIf="customers">
+      <ul *ngFor="let bill of customers.bills">
+        <li>hello</li>
+        <li>
+          {{bill.item}}
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>   -->
+  <div class=" mat-card-align" *ngIf="customers">
+    <table mat-table class="mat-elevation-z8 mt-5" [dataSource]="dataSource">
       <!--- Note that these columns can be defined in any order.
                 The actual rendered columns are set as a property on the row definition" -->
-
       <!-- Position Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef>Id.</th>
-        <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+        <td mat-cell *matCellDef="let bill">{{ bill.id }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="bill">
+       <ng-container matColumnDef="item">
         <th mat-header-cell *matHeaderCellDef>Bill</th>
-        <td mat-cell *matCellDef="let element">{{ element.bill }}</td>
+        <td mat-cell *matCellDef="let bill">{{ bill.item }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="date">
-        <th mat-header-cell *matHeaderCellDef>Date</th>
-        <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+     <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef>Price</th>
+        <td mat-cell *matCellDef="let bill">{{ bill.price }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="amount">
-        <th mat-header-cell *matHeaderCellDef>Amount</th>
-        <td mat-cell *matCellDef="let element">{{ element.amount }}</td>
+      <ng-container matColumnDef="quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let bill">{{ bill.quantity }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="method">
-        <th mat-header-cell *matHeaderCellDef>Method</th>
-        <td mat-cell *matCellDef="let element">{{ element.method }}</td>
+      <ng-container matColumnDef="total">
+        <th mat-header-cell *matHeaderCellDef>Total</th>
+        <td mat-cell *matCellDef="let bill">{{ bill.total }}</td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

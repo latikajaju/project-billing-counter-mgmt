@@ -32,24 +32,28 @@ export class ConfirmationDialogComponent {
   constructor(
     private router: Router,
     private dialogRef: MatDialogRef<ConfirmationDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data:DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData,
     private customerS: CustomerServiceService
   ) {}
   ngOnInit() {
     console.log(this.data);
   }
   onSubmit() {
-    console.log("Clicked on submit")
+    console.log('Clicked on submit');
     console.log(this.data);
     if (this.data.src == 'create') {
       console.log('in create');
-      this.customerS.addCustomer(this.data.customerData);
-      this.router.navigate(['/dashboard/customers/customers-list']);
+      if (this.customerS.isMobileNumberExists(this.data.customerData.mobile)) {
+        this.dialogRef.close({ mobileExists: true });
+      } else {
+        this.customerS.addCustomer(this.data.customerData);
+        this.router.navigate(['/dashboard/customers/customers-list']);
+      }
     }
     if (this.data.src == 'edit') {
       console.log('in edit');
       this.customerS.editCustomer(this.data.customerData);
-      this.router.navigate(['/dashboard/customers/customers-list'])
+      this.router.navigate(['/dashboard/customers/customers-list']);
     }
   }
   onClose() {

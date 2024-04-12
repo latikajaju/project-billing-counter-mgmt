@@ -46,7 +46,7 @@
             <mat-error *ngIf="signupForm?.get('mobile')?.hasError('pattern')">Phone number is <strong>incorrect</strong></mat-error>
           </mat-form-field>
           
-          <mat-form-field class=" ">
+          <!-- <mat-form-field class=" ">
             <mat-label>Password</mat-label>
             <input
               matInput
@@ -55,7 +55,7 @@
               formControlName="password"
               required
             />
-            <!-- <mat-error *ngIf="signupForm?.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error> -->
+            <mat-error *ngIf="signupForm?.get('password')?.hasError('required')">Password is <strong>required</strong></mat-error>
           </mat-form-field>
 
           <mat-form-field class=" ">
@@ -67,8 +67,8 @@
               formControlName="confirm password"
               required
             />
-            <!-- <mat-error *ngIf="signupForm?.get('confirmPassword')?.hasError.('mismatch')">Password <strong>do not match</strong></mat-error> -->
-          </mat-form-field>
+            <mat-error *ngIf="signupForm?.get('confirmPassword')?.hasError.('mismatch')">Password <strong>do not match</strong></mat-error>
+          </mat-form-field> -->
   
           <div class="flex-row">
             <div class="mr-3">

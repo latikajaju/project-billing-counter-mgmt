@@ -5,6 +5,6 @@ import { BillsListComponent } from "./bills-list/bills-list.component";
 
 export const BILL_ROUTES: Route[] = [
     { path: 'new-bill', component: NewBillComponent },
-    { path: 'bill-details', component: BillDetailsComponent },
+    { path: 'bill-details/:id', component: BillDetailsComponent },
     { path: 'bills-list', component: BillsListComponent }
 ]

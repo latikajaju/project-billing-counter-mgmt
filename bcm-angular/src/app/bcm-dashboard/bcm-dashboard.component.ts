@@ -4,7 +4,7 @@ import { BcmNavComponent } from '../bcm-nav/bcm-nav.component';
 import { NavCommunicationService } from '../nav-communication.service';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatIconModule} from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-bcm-dashboard',

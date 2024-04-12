@@ -27,7 +27,7 @@ export class BcmSignupComponent {
   signupForm: FormGroup
   constructor(private fb: FormBuilder){
     this.signupForm = this.fb.group({
-      username: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       mobile: new FormControl('', [Validators.required, Validators.pattern('[0-9]{10}')])
       // password: new FormControl('', [Validators.required]),

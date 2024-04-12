@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { Customer } from '../../../../data-type';
+import { Bill, Customer } from '../../../../data-type';
 import { MatButtonModule } from '@angular/material/button';
 import { CustomerServiceService } from '../customer-service.service';
 import { RouterModule } from '@angular/router';
@@ -35,6 +35,7 @@ export class CustomersListComponent {
     if(searchMobile){
       console.log(searchMobile)
       this.dataSource = this.customerS.filterByMobile(searchMobile)
+      console.log(this.dataSource)
     }
   }
 }

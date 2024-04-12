@@ -26,6 +26,7 @@ import { ConfirmationDialogComponent } from '../confirmation-dialog/confirmation
 import { formateDate } from '../../../formateDate';
 import { Customer, DialogData } from '../../../../data-type';
 import { CustomerServiceService } from '../customer-service.service';
+import { DialogRef } from '@angular/cdk/dialog';
 
 @Component({
   selector: 'app-new-customer',
@@ -47,7 +48,11 @@ import { CustomerServiceService } from '../customer-service.service';
 export class NewCustomerComponent {
   customerForm: FormGroup;
   selectedDate!: Date;
-  constructor(private fb: FormBuilder, public dialog: MatDialog, private customerS: CustomerServiceService) {
+  constructor(
+    private fb: FormBuilder,
+    public dialog: MatDialog,
+    private customerS: CustomerServiceService
+  ) {
     this.customerForm = this.fb.group({
       name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -63,7 +68,20 @@ export class NewCustomerComponent {
   }
 
   ngOnInit() {
-   
+    
+    // dialogRef.afterClosed().subscribe((me:any)=>
+    // {
+    //   console.log("calling after closing dialog")
+    //   console.log(me)
+    //   if(me){
+    //     this.customerForm.get('mobile')?.setErrors({mobileExists:true})
+    //   }
+    //   // if (
+    //   //   this.customerS.isMobileNumberExists(this.customerForm.value['mobile'])
+    //   // ) {
+    //   //   this.customerForm.get('mobile')?.setErrors({mobileExists:true})
+    //   // } 
+    // })
   }
 
   get today(): Date {
@@ -72,21 +90,34 @@ export class NewCustomerComponent {
 
   onSubmit() {
     if (this.customerForm.valid) {
-      const customerData:  Customer  = {
+        this.customerForm.get('mobile')?.setErrors(null)
+        const customerData: Customer = {
           id: this.customerS.getNextId(),
           ...this.customerForm.value,
-          dob: formateDate(this.customerForm.value['dob'])
-      };
-      console.log(customerData);
-        this.dialog.open(ConfirmationDialogComponent, {
-          data: { customerData, src: 'create' }
-      });
+          dob: formateDate(this.customerForm.value['dob']),
+        };
+
+        console.log(customerData);
+        const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+          data: { customerData, src: 'create' },
+        });
+        dialogRef.afterClosed().subscribe((result) => {
+          console.log("calling after closing dialog");
+          if (result) { // Check if a value was emitted (dialog confirmed)
+            console.log(result);
+            if (result) {
+              this.customerForm.get('mobile')?.setErrors({ mobileExists: true });
+            } else {
+              this.customerForm.get('mobile')?.setErrors(null); // Clear mobileExists error
+            }
+          }
+        });
       // this.dialog.open(ConfirmationDialogComponent, customerData);
     } else {
       this.customerForm.markAllAsTouched();
     }
   }
-  resetForm(){
+  resetForm() {
     this.customerForm.reset();
   }
 }

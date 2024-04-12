@@ -6,6 +6,7 @@ import { BcmSignupComponent } from './bcm-signup/bcm-signup.component';
 
 export const routes: Routes = [
     { path: '', loadComponent: ()=>import('./bcm-login/bcm-login.component').then(mod=>mod.BcmLoginComponent) },
+    {path: 'login', component:BcmLoginComponent},
     { path:'signup', component:BcmSignupComponent },
     {
         path: 'dashboard', 

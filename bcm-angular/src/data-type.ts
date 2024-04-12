@@ -5,6 +5,7 @@ export interface Customer {
     name: string
     email: string;
     mobile: string;
+    bills: Bill[]
   }
 
   
@@ -14,6 +15,9 @@ export interface Bill {
     price: number;
     quantity: number;
     total:  number;
+    // counter: number;
+    // cashier: string;
+    // paymentMode: string;
   }
 
 export interface DialogData{
